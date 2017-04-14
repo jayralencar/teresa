@@ -12,5 +12,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        \App\model\Usuario::create([
+        	"nome_usuario"=>"Root",
+        	"email_usuario"=>"root@root.com",
+        	"senha_usuario"=> password_hash("masterkey", PASSWORD_DEFAULT)
+        ]);
     }
 }
