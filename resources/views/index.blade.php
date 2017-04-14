@@ -30,6 +30,7 @@
     <script type="text/javascript" src="app/services/loginService.js"></script>
     <script type="text/javascript" src="app/services/loginAdminService.js"></script>
     <script type="text/javascript" src="app/services/questoesService.js"></script>
+    <script type="text/javascript" src="app/services/testeService.js"></script>
 
     <!-- Controllers -->
     <script type="text/javascript" src="app/controllers/loginController.js"></script>

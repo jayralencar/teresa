@@ -24,3 +24,9 @@ Route::middleware("admin")->get("/questoes","Questao@get");
 Route::middleware("admin")->post("/questao","Questao@add");
 Route::middleware("admin")->put("/questao/{id_questao}","Questao@edit");
 Route::middleware("admin")->delete("/questao/{id_questao}","Questao@delete");
+
+// Testes
+Route::middleware("admin")->get("/testes/{id_questao}","Teste@get");
+Route::middleware("admin")->post("/teste","Teste@add");
+Route::middleware("admin")->put("/teste/{id_teste}","Teste@edit");
+Route::middleware("admin")->delete("/teste/{id_teste}","Teste@delete");

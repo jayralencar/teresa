@@ -8,6 +8,7 @@ class Teste extends Model
 {
     protected $table = 'cad_teste';
     protected $primaryKey = "id_teste";
+    protected $fillable = ['entrada','saida','id_questao','ativo'];
 
     public function questao()
     {
