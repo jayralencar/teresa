@@ -20,16 +20,22 @@
     <!-- ngProgress -->
     <script type="text/javascript" src="/ngprogress/build/ngProgress.js"></script>
 
+    <script type="text/javascript" src="/tinymce/tinymce.js"></script>
+    <script type="text/javascript" src="/angular-ui-tinymce/src/tinymce.js"></script>
+
     <!-- App -->
     <script type="text/javascript" src="js/app.js"></script>
 
     <!-- Services -->
     <script type="text/javascript" src="app/services/loginService.js"></script>
     <script type="text/javascript" src="app/services/loginAdminService.js"></script>
+    <script type="text/javascript" src="app/services/questoesService.js"></script>
 
     <!-- Controllers -->
     <script type="text/javascript" src="app/controllers/loginController.js"></script>
     <script type="text/javascript" src="app/controllers/loginAdminController.js"></script>
+    <script type="text/javascript" src="app/controllers/adminController.js"></script>
+    <script type="text/javascript" src="app/controllers/questoesController.js"></script>
 </head>
 <body>
     <ng-view></ng-view>

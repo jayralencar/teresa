@@ -1,0 +1,101 @@
+<div ng-include="'app/views/menuAdmin.html'"></div>
+<div class="container" ng-init="init()">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Cadastro de Questão</h1>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+			<button ng-click="questao = {}" class="btn btn-info" data-toggle="modal" data-target="#modalCadastro"><i class="fa fa-plus"></i> Nova questão</button>
+		</div>
+		<div class="col-md-6">
+			<input class="form-control" ng-model="pesquisa"></input>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>Pontuação Máxima</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="questao in questoes | filter: pesquisa | itemsPerPage: 10">
+						<td>{{questao.id_questao}}</td>
+						<td>{{questao.nome_questao}}</td>
+						<td>{{questao.pontuacao}}</td>
+						<td>
+							<div class="btn-group">
+								<button type="button" class="btn btn-info dropdown-toggle btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Opções <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="" ng-click="editar(questao)"><i class="fa fa-edit"></i> Editar</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="" ng-click="excluir(questao)"><i class="fa fa-trash"></i> Excluir</a></li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<dir-pagination-controls>
+			</dir-pagination-controls>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalCadastro">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Questão</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-8">
+						<label>Nome</label>
+						<input type="text" class="form-control" ng-model="questao.nome_questao">
+					</div>
+					<div class="col-md-4">
+						<label>Pontuação máxima</label>
+						<input type="text" class="form-control" ng-model="questao.pontuacao" name="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label>Enunciado:</label>
+						<textarea ui-tinymce="tinyOptions"="tinyOptions" ng-model="questao.enunciado_questao"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label>Entrada:</label>
+						<textarea ui-tinymce="tinyOptions"="tinyOptions" ng-model="questao.entrada_questao"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label>Saída:</label>
+						<textarea ui-tinymce="tinyOptions"="tinyOptions" ng-model="questao.saida_questao"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-dager" ng-click="questao = {}" data-dismiss="modal"><i class="fa fa-remove"></i> Cancelar</button>
+				<button type="button" class="btn btn-success" ng-click="salvar()" ng-disabled="!questao.nome_questao "><i class="fa fa-check"></i> Salvar</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

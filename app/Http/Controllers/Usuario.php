@@ -18,16 +18,24 @@ class Usuario extends Controller
 
     	if(sizeof($usuario)>0){
     		if(password_verify($data['senha'], $usuario->senha_usuario)){
-    			return ["status" => 1];
     			session_start();
     			$_SESSION['id_usuario'] = $usuario->id_usuario;
     			$_SESSION['nome_usuario'] = $usuario->nome_usuario;
+    			return ["status" => 1];
     		}else{
     			return ["status" =>0, "message"=>"Senha inválida"];	
     		}
     	}else{
     		return ["status" =>0, "message"=>"E-mail não cadastrado!"];
     	}
+    }
 
+    public function logado(){
+    	session_start();
+        $data['logado'] = isset($_SESSION['id_usuario'])?true:false;
+        if($data['logado']){
+        	$data['usuario']['nome_usuario'] = \App\model\Usuario::find($_SESSION['id_usuario'])->nome_usuario;
+        }
+        return $data;
     }
 }

@@ -8,4 +8,5 @@ class Usuario extends Model
 {
     protected $table = 'cad_usuario';
     protected $primaryKey = "id_usuario";
+    
 }
