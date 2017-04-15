@@ -66,13 +66,17 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-6">
 						<label>Nome</label>
 						<input type="text" class="form-control" ng-model="questao.nome_questao">
 					</div>
-					<div class="col-md-4">
-						<label>Pontuação máxima</label>
+					<div class="col-md-3">
+						<label>Pontuação máx.</label>
 						<input type="text" class="form-control" ng-model="questao.pontuacao" name="">
+					</div>
+					<div class="col-md-3">
+						<label>Nível</label>
+						<select class="form-control" ng-model="questao.nivel_questao" ng-options="i.id as i.nome for i in niveis"></select>
 					</div>
 				</div>
 				<div class="row">

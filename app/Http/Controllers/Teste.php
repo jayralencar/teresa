@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Teste extends Controller
 {
-    public function get($id_questao)
+    public function get($)
     {
     	return \App\model\Questao::find($id_questao)
     		-> testes()

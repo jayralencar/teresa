@@ -9,6 +9,8 @@ class Partida extends Model
     protected $table = 'cad_partida';
     protected $primaryKey = "id_partida";
 
+    protected $fillable = ['nome_partida','duracao_ms','inicio','status', 'ativo'];
+
     public function participantes(){
     	return $this->hasMany('App\model\Participante','id_partida');
     }

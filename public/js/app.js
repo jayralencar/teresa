@@ -20,6 +20,11 @@ app.config(function($routeProvider){
     controller : "questoesController",
     requiredAdmin: true
   })
+  .when("/partidas", {
+    templateUrl : "app/views/partidas.html",
+    controller : "partidasController",
+    requiredAdmin: true
+  })
  });
 
 app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory, loginService, loginAdminService) {

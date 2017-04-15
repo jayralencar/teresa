@@ -60,4 +60,11 @@ app.controller("questoesController", function($scope, questoesService, testeServ
 			})
 		}
 	}
+
+	$scope.niveis = [
+		{id:1,nome:"Básico"},
+		{id:2,nome:"Médio"},
+		{id:3,nome:"Alto"},
+		{id:4,nome:"JEDI"},
+	]
 });

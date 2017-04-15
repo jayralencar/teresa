@@ -30,3 +30,15 @@ Route::middleware("admin")->get("/testes/{id_questao}","Teste@get");
 Route::middleware("admin")->post("/teste","Teste@add");
 Route::middleware("admin")->put("/teste/{id_teste}","Teste@edit");
 Route::middleware("admin")->delete("/teste/{id_teste}","Teste@delete");
+
+// Partidas
+Route::middleware("admin")->get("/partidas/","Partida@get");
+Route::middleware("admin")->post("/partida","Partida@add");
+Route::middleware("admin")->put("/partida/{id_partida}","Partida@edit");
+Route::middleware("admin")->delete("/partida/{id_partida}","Partida@delete");
+
+// Questões na partida
+Route::middleware("admin")->get("/questoes-partida/{id_partida}","PartidaQuestao@get");
+Route::middleware("admin")->post("/questao-partida","PartidaQuestao@add");
+Route::middleware("admin")->put("/questao-partida/{id_partida_questao}","PartidaQuestao@edit");
+Route::middleware("admin")->delete("/questao-partida/{id_partida_questao}","PartidaQuestao@delete");
