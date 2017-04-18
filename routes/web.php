@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::middleware([])->get('/', function () {
     return view('index');
 });
 
-Route::get("/admin", function(){
+Route::middleware([])->get("/admin", function(){
 	return view("admin");
 });

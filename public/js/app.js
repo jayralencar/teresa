@@ -25,6 +25,11 @@ app.config(function($routeProvider){
     controller : "partidasController",
     requiredAdmin: true
   })
+  .when("/iniciar/:id_partida", {
+    templateUrl : "app/views/iniciar-partida.html",
+    controller : "iniciarController",
+    requiredAdmin: true
+  })
  });
 
 app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory, loginService, loginAdminService) {

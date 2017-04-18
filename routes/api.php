@@ -20,25 +20,33 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/login',"Usuario@login");
 Route::get("/logado", "Usuario@logado");
 
-Route::middleware("admin")->get("/questoes","Questao@get");
-Route::middleware("admin")->post("/questao","Questao@add");
-Route::middleware("admin")->put("/questao/{id_questao}","Questao@edit");
-Route::middleware("admin")->delete("/questao/{id_questao}","Questao@delete");
+Route::middleware("admin1")->get("/questoes","Questao@get");
+Route::middleware("admin1")->post("/questao","Questao@add");
+Route::middleware("admin1")->put("/questao/{id_questao}","Questao@edit");
+Route::middleware("admin1")->delete("/questao/{id_questao}","Questao@delete");
 
 // Testes
-Route::middleware("admin")->get("/testes/{id_questao}","Teste@get");
-Route::middleware("admin")->post("/teste","Teste@add");
-Route::middleware("admin")->put("/teste/{id_teste}","Teste@edit");
-Route::middleware("admin")->delete("/teste/{id_teste}","Teste@delete");
+Route::middleware("admin1")->get("/testes/{id_questao}","Teste@get");
+Route::middleware("admin1")->post("/teste","Teste@add");
+Route::middleware("admin1")->put("/teste/{id_teste}","Teste@edit");
+Route::middleware("admin1")->delete("/teste/{id_teste}","Teste@delete");
 
 // Partidas
-Route::middleware("admin")->get("/partidas/","Partida@get");
-Route::middleware("admin")->post("/partida","Partida@add");
-Route::middleware("admin")->put("/partida/{id_partida}","Partida@edit");
-Route::middleware("admin")->delete("/partida/{id_partida}","Partida@delete");
+Route::middleware("admin1")->get("/partidas/","Partida@get");
+Route::middleware("admin1")->get("/partida/{id_partida}","Partida@find");
+Route::middleware("admin1")->post("/partida","Partida@add");
+Route::middleware("admin1")->put("/partida/{id_partida}","Partida@edit");
+Route::middleware("admin1")->delete("/partida/{id_partida}","Partida@delete");
 
 // Questões na partida
-Route::middleware("admin")->get("/questoes-partida/{id_partida}","PartidaQuestao@get");
-Route::middleware("admin")->post("/questao-partida","PartidaQuestao@add");
-Route::middleware("admin")->put("/questao-partida/{id_partida_questao}","PartidaQuestao@edit");
-Route::middleware("admin")->delete("/questao-partida/{id_partida_questao}","PartidaQuestao@delete");
+Route::middleware("admin1")->get("/questoes-partida/{id_partida}","PartidaQuestao@get");
+Route::middleware("admin1")->post("/questao-partida","PartidaQuestao@add");
+Route::middleware("admin1")->put("/questao-partida/{id_partida_questao}","PartidaQuestao@edit");
+Route::middleware("admin1")->delete("/questao-partida/{id_partida_questao}","PartidaQuestao@delete");
+
+// Participantes
+Route::middleware("admin1")->get("/participantes/{id_questao}","Participante@get");
+Route::post("/participante","Participante@add");
+Route::middleware("admin1")->put("/participante/{id_participante}","Participante@edit");
+Route::middleware("admin1")->delete("/participante/{id_participante}","Participante@delete"); 
+Route::get("/participante/logado","Participante@logado");

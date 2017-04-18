@@ -33,6 +33,8 @@
     <script type="text/javascript" src="app/services/testeService.js"></script>
     <script type="text/javascript" src="app/services/partidasService.js"></script>
     <script type="text/javascript" src="app/services/partidaQuestaoService.js"></script>
+    <script type="text/javascript" src="app/services/participanteService.js"></script>
+
 
     <!-- Controllers -->
     <script type="text/javascript" src="app/controllers/loginController.js"></script>
@@ -40,6 +42,7 @@
     <script type="text/javascript" src="app/controllers/adminController.js"></script>
     <script type="text/javascript" src="app/controllers/questoesController.js"></script>
     <script type="text/javascript" src="app/controllers/partidasController.js"></script>
+    <script type="text/javascript" src="app/controllers/iniciarController.js"></script>
 </head>
 <body>
     <ng-view></ng-view>

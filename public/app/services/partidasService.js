@@ -4,6 +4,9 @@ app.factory("partidasService", function($http){
 		get: function(){
 			return $http.get("api/partidas");
 		},
+		find: function(id){
+			return $http.get("api/partida/"+id);
+		},
 		post: function(data){
 			return $http.post("api/partida", data);
 		},

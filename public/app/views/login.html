@@ -8,17 +8,17 @@
 				<form ng-submit="entrar()">
 					<div class="form-group">
 						<label>Nome de usuário:</label>
-						<input class="form-control" type="text" ng-model="login.email" required="">
+						<input class="form-control" type="text" ng-model="login.nome_participante" required="">
 					</div>
 					<div class="form-group">
 						<label>ID da partida:</label>
-						<input class="form-control" type="text" ng-model="login.senha" required="">
+						<input class="form-control" type="numeric" ng-model="login.id_partida" required="">
 					</div>
 					<hr>
-					<button class="btn btn-success btn-block" ng-disabled="!login.email || !login.senha"><i class="fa fa-sign-in"></i> Entrar</button>
+					<button class="btn btn-success btn-block" ng-disabled="!login.nome_participante || !login.id_partida"><i class="fa fa-sign-in"></i> Entrar</button>
 				</form>
 				<div class="alert alert-danger" ng-show="error">
-					@{{error}}
+					{{error}}
 				</div>
 			</div>
 		</div>

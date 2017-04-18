@@ -12,6 +12,16 @@ class Partida extends Controller
     		->get();
     }
 
+    public function find($id_partida){
+        return \App\model\Partida::find($id_partida)
+            -> with("participantes")
+            -> with(["partidaQuestoes" => function($query){
+                $query -> where("ativo", 1)
+                    ->with("questao");    
+            }])
+            -> first();
+    }
+
     public function add(Request $request){
     	$data = $request->all();
     	unset($data['duracao']);
