@@ -30,9 +30,15 @@ app.config(function($routeProvider){
     controller : "iniciarController",
     requiredAdmin: true
   })
+  .when("/partida", {
+    templateUrl : "app/views/partida.html",
+    controller : "partidaController",
+    requiredLogin: true
+  })
+
  });
 
-app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory, loginService, loginAdminService) {
+app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory, participanteService, loginAdminService) {
   var ngProgress = ngProgressFactory.createInstance();
   $rootScope.$on('$routeChangeStart', function(ev, next, current) {
     ngProgress.setColor('pink');
@@ -45,7 +51,7 @@ app.run(function($window, $location, $rootScope,$anchorScroll, ngProgressFactory
       })
     }
     if(next.$$route.requiredLogin){
-      loginService.logado().success(function(res){
+      participanteService.logado().success(function(res){
         if(!res.logado){
           $location.path('/')
         }

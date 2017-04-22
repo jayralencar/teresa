@@ -22,7 +22,7 @@ class Participante extends Controller
             return ["status"=>0,"message"=>"O ID de partida informado não existe!"];
         }
 
-    	$teste = \App\model\Participante::where("id_participante", $data['id_participante'])
+    	$teste = \App\model\Participante::where("id_partida", $data['id_partida'])
     		-> where("nome_participante", $data['nome_participante'])
     		-> get();
 

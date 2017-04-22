@@ -23,6 +23,7 @@ class Usuario extends Controller
                 }
     			$_SESSION['id_usuario'] = $usuario->id_usuario;
     			$_SESSION['nome_usuario'] = $usuario->nome_usuario;
+                $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
     			return ["status" => 1];
     		}else{
     			return ["status" =>0, "message"=>"Senha inválida"];	
@@ -34,6 +35,9 @@ class Usuario extends Controller
 
     public function logado(){
     	// session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         $data['logado'] = isset($_SESSION['id_usuario'])?true:false;
         if($data['logado']){
         	$data['usuario']['nome_usuario'] = \App\model\Usuario::find($_SESSION['id_usuario'])->nome_usuario;

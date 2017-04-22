@@ -43,6 +43,7 @@
     <script type="text/javascript" src="app/controllers/questoesController.js"></script>
     <script type="text/javascript" src="app/controllers/partidasController.js"></script>
     <script type="text/javascript" src="app/controllers/iniciarController.js"></script>
+    <script type="text/javascript" src="app/controllers/partidaController.js"></script>
 </head>
 <body>
     <ng-view></ng-view>

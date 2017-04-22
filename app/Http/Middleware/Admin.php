@@ -18,9 +18,18 @@ class Admin
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
+
+        // echo $_SESSION["nome_usuario"];
+
         if(!isset($_SESSION['id_usuario'])){
             return response('Não autorizado.',401);
+        }else{
+            if($_SESSION['user_agent'] != $_SERVER['HTTP_USER_AGENT']){
+                return response('Não autorizado.',401);
+            }else{
+                // session_regenerate_id();
+                return $next($request);
+            }
         }
-        return $next($request);
     }
 }
