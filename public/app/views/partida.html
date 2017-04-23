@@ -4,5 +4,49 @@
 			<h1>Aguardando mais jogadores</h1>
 		</div>
 	</div>
+	<div class="row" ng-show="partida.inicio">
+		<div class="col-md-12">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<h3 class="text-center">{{partida.partida_questoes[iQuestao].questao.nome_questao}}</h3>
+					<div ng-bind-html="partida.partida_questoes[iQuestao].questao.enunciado_questao"></div>
+					<hr>
+					<h4 class="text-center">
+						Entrada
+					</h4>
+					<div ng-bind-html="partida.partida_questoes[iQuestao].questao.entrada_questao"></div>
+					<hr>
+					<h4 class="text-center">
+						Saída
+					</h4>
+					<div ng-bind-html="partida.partida_questoes[iQuestao].questao.saida_questao"></div>
+					<hr>
+					<h4 class="text-center">
+						Exemplos
+					</h4>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Entrada</th>
+								<th>Saída</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="teste in partida.partida_questoes[iQuestao].questao.testes">
+								<td>{{teste.entrada}}</td>
+								<td>{{teste.saida}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-4">
+					Submeter e submissões
+				</div>
+			</div>
+		</div>
+	</div>
 	
 </div>

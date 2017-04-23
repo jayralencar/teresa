@@ -17,7 +17,11 @@ class Partida extends Controller
             -> with("participantes")
             -> with(["partidaQuestoes" => function($query){
                 $query -> where("ativo", 1)
-                    ->with("questao");    
+                    ->with(["questao"=>function($qry){
+                        $qry->with(["testes"=>function($q){
+                            $q->where("ativo",1);
+                        }]);
+                    }]);    
             }])
             -> first();
     }

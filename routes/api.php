@@ -42,7 +42,7 @@ Route::middleware("admin1")->put("/questao-partida/{id_partida_questao}","Partid
 Route::middleware("admin1")->delete("/questao-partida/{id_partida_questao}","PartidaQuestao@delete");
 
 // Participantes
-Route::middleware("admin1")->get("/participantes/{id_questao}","Participante@get");
+Route::middleware("admin1")->get("/participantes/{id_partida}","Participante@get");
 Route::post("/participante","Participante@add");
 Route::middleware("admin1")->put("/participante/{id_participante}","Participante@edit");
 Route::middleware("admin1")->delete("/participante/{id_participante}","Participante@delete"); 

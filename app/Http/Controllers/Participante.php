@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class Participante extends Controller
 {
-    public function get()
+    public function get($id_partida)
     {
-    	return \App\model\Participante::where("ativo",1)
-    		-> with("testes")
-    		->get();
+    	// return DB::query("SELECT A.*, COUNT(B.*) qt, SUM(B.pontuacao) as pontuacao  FROM cad_participante A 
+     //        LEFT JOIN cad_submissao B ON A.id_participante = B.id_participante 
+     //        WHERE A.id_partida = $id_partida AND A.ativo = 1 AND B.ativo = 1
+     //        GROUP BY B.id_participante ORDER BY pontuacao DESC, qt ASC")->get();
+
+        return DB::table("cad_participante")
+            -> leftJoin("cad_submissao","cad_participante.id_participante","=","cad_submissao.id_participante")
+            -> select(DB::raw("cad_participante.*, COUNT(cad_submissao.id_submissao) as qt, ifnull(SUM(cad_submissao.pontuacao),0) pontuacao"))
+            -> groupBy("cad_participante.id_participante")
+            -> orderBy("pontuacao", "desc")
+            -> orderBy("qt","asc")
+            -> get();
     }
 
     public function add(Request $request){

@@ -6,14 +6,32 @@
 			<h1><small>ID da Partida: </small>{{partida.id_partida}}</h1>
 		</div>
 		<div class="col-md-6 text-right">
-			<button class="btn btn-success"><i class="fa fa-play"></i> Iniciar Partida</button>
-			<h2>{{tempo}}</h2>
+			<button class="btn btn-success" ng-show="!partida.inicio" ng-click="iniciar()"><i class="fa fa-play"></i> Iniciar Partida</button>
+			<button class="btn btn-warning" ng-show="partida.inicio" ng-click="encerrar()"><i class="fa fa-stop"></i> Encerrar Partida</button>
+			<h2>{{cronometro.tempo_formatado}}</h2>
 		</div>
 	</div>
 	<hr>
 	<div class="row">
 		<div class="col-md-12">
-			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>Submissões</th>
+						<th>Pontuação</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="participante in participantes ">
+						<td>{{$index+1}}</td>
+						<td>{{participante.nome_participante}}</td>
+						<td>{{participante.qt}}</td>
+						<td>{{participante.pontuacao}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>

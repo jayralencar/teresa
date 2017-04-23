@@ -13,6 +13,7 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <!-- angular -->
     <script type="text/javascript" src="/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/angular/sanitize.js"></script>
     <!-- dir paginate -->
     <script type="text/javascript" src="/angular-utils-pagination/dirPagination.js"></script>
     <!-- ng-route -->
@@ -34,6 +35,7 @@
     <script type="text/javascript" src="app/services/partidasService.js"></script>
     <script type="text/javascript" src="app/services/partidaQuestaoService.js"></script>
     <script type="text/javascript" src="app/services/participanteService.js"></script>
+    <script type="text/javascript" src="app/services/timeService.js"></script>
 
 
     <!-- Controllers -->

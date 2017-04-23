@@ -1,5 +1,7 @@
 'use strict';
-var app = angular.module('app',["ngRoute",'ngProgress','angularUtils.directives.dirPagination','ui.tinymce']);
+var app = angular.module('app',["ngRoute",'ngProgress','angularUtils.directives.dirPagination','ui.tinymce','ngSanitize']);
+
+var conn = new WebSocket('ws://localhost:4321');
 
 app.config(function($routeProvider){
   $routeProvider.when("/", {

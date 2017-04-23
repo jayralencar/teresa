@@ -10,4 +10,14 @@ class Participante extends Model
     protected $primaryKey = "id_participante";
 
     protected $fillable = ['nome_participante','id_partida','hora_login', 'ativo'];
+
+    public function submissoes(){
+    	return $this->hasMany("App\model\Submissao","id_participante");	
+    }
+
+    public function pontuacao(){
+    	return $this->submissoes()
+		    ->selectRaw('id_participante, ifnull(count(*),0) as qt, sum(pontuacao) as pontuacao')
+		    ->groupBy('id_participante');
+    }
 }

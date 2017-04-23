@@ -5,8 +5,10 @@ app.controller("loginController", function($scope, $location, participanteServic
 			if(res.status == 0){
 				$scope.error = res.message;
 			}else{
+				conn.send("maisum");
 				$location.path("/partida");
 			}
-		})
+		});
 	}
+
 })
