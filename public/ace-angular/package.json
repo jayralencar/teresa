@@ -1,0 +1,58 @@
+{
+  "name": "ace-angular",
+  "version": "0.1.0",
+  "description": "Module to use ace editor in angular js",
+  "main": "ace-angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayralencar/ace-angular.git"
+  },
+  "keywords": [
+    "ace",
+    "editor",
+    "angular"
+  ],
+  "author": {
+    "name": "Jayr Alencar",
+    "url": "www.jayralencar.com.br"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayralencar/ace-angular/issues"
+  },
+  "homepage": "https://github.com/jayralencar/ace-angular#readme",
+  "devDependencies": {
+    "ace-builds": "latest",
+    "angular": "latest"
+  },
+  "gitHead": "510d111cc02adc1a7769635f5b496f802bd692e2",
+  "_id": "ace-angular@0.1.0",
+  "_shasum": "4cab8e5a47aeb298bf69d4f3fd7ed28372b6a509",
+  "_from": "ace-angular@latest",
+  "_npmVersion": "2.14.12",
+  "_nodeVersion": "4.3.1",
+  "_npmUser": {
+    "name": "jayralencar",
+    "email": "jayralencarpereira@gmail.com"
+  },
+  "dist": {
+    "shasum": "4cab8e5a47aeb298bf69d4f3fd7ed28372b6a509",
+    "tarball": "https://registry.npmjs.org/ace-angular/-/ace-angular-0.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jayralencar",
+      "email": "jayralencarpereira@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ace-angular-0.1.0.tgz_1465228645232_0.766209393274039"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ace-angular/-/ace-angular-0.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

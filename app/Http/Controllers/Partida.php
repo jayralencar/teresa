@@ -19,7 +19,7 @@ class Partida extends Controller
                 $query -> where("ativo", 1)
                     ->with(["questao"=>function($qry){
                         $qry->with(["testes"=>function($q){
-                            $q->where("ativo",1);
+                            $q->where("ativo",1);   
                         }]);
                     }]);    
             }])

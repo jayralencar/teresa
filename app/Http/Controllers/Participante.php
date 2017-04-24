@@ -72,7 +72,7 @@ class Participante extends Controller
             session_start();
         }
         return isset($_SESSION['id_participante']) ? 
-            ["logado" => 1, "data" => \App\model\Participante::find($_SESSION['id_participante']) -> first()] :
+            ["logado" => 1, "data" => \App\model\Participante::find($_SESSION['id_participante']) -> with("pontuacao") -> first()] :
             ["logado" => 0];  
     }
 }

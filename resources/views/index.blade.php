@@ -10,10 +10,16 @@
     <link rel="stylesheet" type="text/css" href="node_modules/ngprogress/ngProgress.css">
     <!-- jQuery -->
     <script src="js/jQuery-2.1.4.min.js" type="text/javascript"></script>
+    <!-- load ace -->
+    <script src="/ace-builds/src-min/ace.js"></script>
+    <!-- load ace language tools -->
+    <script src="/ace-builds/src-min/ext-language_tools.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <!-- angular -->
     <script type="text/javascript" src="/angular/angular.min.js"></script>
     <script type="text/javascript" src="/angular/sanitize.js"></script>
+    <!-- Ace -->
+    <script type="text/javascript" src="/ace-angular/ace-angular.js"></script>
     <!-- dir paginate -->
     <script type="text/javascript" src="/angular-utils-pagination/dirPagination.js"></script>
     <!-- ng-route -->

@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('app',["ngRoute",'ngProgress','angularUtils.directives.dirPagination','ui.tinymce','ngSanitize']);
+var app = angular.module('app',["ngRoute",'ngProgress','angularUtils.directives.dirPagination','ui.tinymce','ace.angular','ngSanitize']);
 
 var conn = new WebSocket('ws://localhost:4321');
 
